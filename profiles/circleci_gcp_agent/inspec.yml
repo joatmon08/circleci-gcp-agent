@@ -1,0 +1,8 @@
+---
+name: circleci-gcp-agent
+title: validate image used for gcloud interfacing
+summary: Verify installed packages and gcloud SDK
+version: 1.0.0
+maintainer: Rosemary Wang
+copyright: Rosemary Wang
+license: Apache-2.0
