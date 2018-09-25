@@ -33,7 +33,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: install dependencies
-          commmand: bundle install
+          command: bundle install
       - run:
           name: configuration tests
           command: |
