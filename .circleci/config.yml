@@ -26,6 +26,7 @@ jobs:
           command: |
             echo $DOCKER_HUB_KEY | docker login -u $DOCKER_HUB_USER --password-stdin
             docker push $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
+            docker push $LIBRARY/$CONTAINER_NAME:latest
   test:
     <<: *defaults
     steps:
@@ -38,8 +39,8 @@ jobs:
           name: configuration tests
           command: |
             echo $DOCKER_HUB_KEY | docker login -u $DOCKER_HUB_USER --password-stdin
-            docker pull $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
-            CID="$(docker run -d -v /var/run/docker.sock:/var/run/docker.sock:ro $LIBRARY/$CONTAINER_NAME:$IMAGE_VERSION sleep 360)"
+            docker pull $LIBRARY/$CONTAINER_NAME:latest
+            CID="$(docker run -d -v /var/run/docker.sock:/var/run/docker.sock:ro $LIBRARY/$CONTAINER_NAME:latest sleep 360)"
             inspec exec profiles/circleci_gcp_agent -t docker://$CID
             docker rm -f $CID
 
