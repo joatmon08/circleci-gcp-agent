@@ -45,7 +45,7 @@ control 'check python' do
   title 'confirm python installed'
   desc 'confirm python installed'
   describe command('python --version') do
-    its('stderr') { should include '3.7.0' }
+    its('stderr') { should include '3.6.6' }
   end
   describe command('pip --version') do
     its('stdout') { should include '18.1' }
