@@ -6,7 +6,7 @@ control 'check gcloud sdk' do
     it { should exist }
   end
   describe command('gcloud version') do
-    its('stdout') { should include '217.0.0' }
+    its('stdout') { should include '225.0.0' }
   end
 end
 
