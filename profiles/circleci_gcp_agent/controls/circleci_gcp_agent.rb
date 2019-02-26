@@ -40,6 +40,15 @@ control 'check openssl' do
   end
 end
 
+control 'check gpg' do
+  impact 1.0
+  title 'confirm gpg installed'
+  desc 'confirm gpg installed'
+  describe command('gpg --help') do
+    its('stdout') { should include '2.2.12' }
+  end
+end
+
 control 'check python' do
   impact 1.0
   title 'confirm python installed'
