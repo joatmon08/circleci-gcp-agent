@@ -6,7 +6,7 @@ control 'check gcloud sdk' do
     it { should exist }
   end
   describe command('gcloud version') do
-    its('stdout') { should include '217.0.0' }
+    its('stdout') { should include '235.0.0' }
   end
 end
 
@@ -27,7 +27,7 @@ control 'check git' do
   title 'confirm git installed'
   desc 'confirm git installed'
   describe command('git version') do
-    its('stdout') { should include '2.18.1' }
+    its('stdout') { should include '2.20.1' }
   end
 end
 
@@ -36,7 +36,7 @@ control 'check openssl' do
   title 'confirm openssl installed'
   desc 'confirm openssl installed'
   describe command('openssl version') do
-    its('stdout') { should include '1.0.2' }
+    its('stdout') { should include '1.1.1a' }
   end
 end
 
@@ -45,7 +45,7 @@ control 'check python' do
   title 'confirm python installed'
   desc 'confirm python installed'
   describe command('python --version') do
-    its('stdout') { should include '3.6.6' }
+    its('stdout') { should include '3.6.8' }
   end
   describe command('pip --version') do
     its('stdout') { should include '19.0' }
@@ -63,7 +63,7 @@ control 'check docker' do
   title 'confirm docker installed'
   desc 'confirm docker installed'
   describe command('docker --version') do
-    its('stdout') { should include '18.06.1' }
+    its('stdout') { should include '18.09.1-ce' }
   end
 end
 
@@ -72,7 +72,7 @@ control 'check ruby' do
   title 'confirm ruby installed'
   desc 'confirm ruby installed'
   describe command('ruby --version') do
-    its('stdout') { should include '2.5.2' }
+    its('stdout') { should include '2.5.3' }
   end
   describe command('inspec --version') do
     its('stdout') { should include '3.6.6' }
