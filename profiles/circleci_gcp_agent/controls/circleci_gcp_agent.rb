@@ -6,7 +6,7 @@ control 'check gcloud sdk' do
     it { should exist }
   end
   describe command('gcloud version') do
-    its('stdout') { should include '225.0.0' }
+    its('stdout') { should include '217.0.0' }
   end
 end
 
@@ -48,12 +48,42 @@ control 'check python' do
     its('stdout') { should include '3.6.6' }
   end
   describe command('pip --version') do
-    its('stdout') { should include '18.1' }
+    its('stdout') { should include '19.0' }
   end
   describe command('pip show jinja2') do
     its('stdout') { should include '2.10' }
   end
   describe command('invoke --version') do
     its('stdout') { should include '1.2.0' }
+  end
+end
+
+control 'check docker' do
+  impact 1.0
+  title 'confirm docker installed'
+  desc 'confirm docker installed'
+  describe command('docker --version') do
+    its('stdout') { should include '18.06.1' }
+  end
+end
+
+control 'check ruby' do
+  impact 1.0
+  title 'confirm ruby installed'
+  desc 'confirm ruby installed'
+  describe command('ruby --version') do
+    its('stdout') { should include '2.5.2' }
+  end
+  describe command('inspec --version') do
+    its('stdout') { should include '3.6.6' }
+  end
+end
+
+control 'check terraform' do
+  impact 1.0
+  title 'confirm terraform installed'
+  desc 'confirm terraform installed'
+  describe command('terraform --version') do
+    its('stdout') { should include '0.11.11' }
   end
 end
