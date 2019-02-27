@@ -8,6 +8,7 @@ RUN apk update && apk upgrade \
     && apk add --no-cache bash git openssl ca-certificates docker python3 \
     ruby ruby-bundler ruby-dev g++ libffi-dev musl-dev make gnupg \
     && gcloud components install kubectl \
+    && gcloud components install beta \
     && python3 -m ensurepip \
     && rm -r /usr/lib/python*/ensurepip \
     && pip3 install --upgrade pip setuptools \
