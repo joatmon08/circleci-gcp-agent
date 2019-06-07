@@ -1,6 +1,6 @@
 FROM google/cloud-sdk:alpine
 
-ENV TERRAFORM_VERSION=0.11.11
+ENV TERRAFORM_VERSION=0.12.1
 ARG INSPEC_VERSION=3.6.6
 ARG GEM_SOURCE=https://rubygems.org
 
