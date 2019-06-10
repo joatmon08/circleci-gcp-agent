@@ -1,6 +1,7 @@
 FROM google/cloud-sdk:alpine
 
 ENV TERRAFORM_VERSION=0.12.1
+ENV HELM_VERSION=2.14.1
 ARG INSPEC_VERSION=3.6.6
 ARG GEM_SOURCE=https://rubygems.org
 
@@ -20,6 +21,9 @@ RUN apk update && apk upgrade \
     && cd /tmp \
     && wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
     && unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin \
+    && wget https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz \
+    && tar -xzf helm-v${HELM_VERSION}-linux-amd64.tar.gz \
+    && mv linux-amd64/helm /usr/bin/helm \
     && rm -r /tmp/* \
     && echo "gem: --no-document" > /etc/gemrc \
     && gem install --no-document --source ${GEM_SOURCE} --version ${INSPEC_VERSION} inspec

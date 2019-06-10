@@ -96,3 +96,12 @@ control 'check terraform' do
     its('stdout') { should include '0.12.1' }
   end
 end
+
+control 'check helm' do
+  impact 1.0
+  title 'confirm helm installed'
+  desc 'confirm helm installed'
+  describe command('helm version --client') do
+    its('stdout') { should include '2.14.1' }
+  end
+end
