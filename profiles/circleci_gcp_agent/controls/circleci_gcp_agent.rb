@@ -102,6 +102,6 @@ control 'check helm' do
   title 'confirm helm installed'
   desc 'confirm helm installed'
   describe command('helm version --client') do
-    its('stdout') { should include '2.14.1' }
+    its('stdout') { should include '2.11.0' }
   end
 end
