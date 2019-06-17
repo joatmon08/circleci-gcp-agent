@@ -84,7 +84,7 @@ control 'check ruby' do
     its('stdout') { should include '2.5.5' }
   end
   describe command('inspec --version') do
-    its('stdout') { should include '3.6.6' }
+    its('stdout') { should include '4.3.2' }
   end
 end
 

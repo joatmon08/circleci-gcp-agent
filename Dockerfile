@@ -2,7 +2,7 @@ FROM google/cloud-sdk:alpine
 
 ENV TERRAFORM_VERSION=0.12.1
 ENV HELM_VERSION=2.11.0
-ARG INSPEC_VERSION=3.6.6
+ARG INSPEC_VERSION=4.3.2
 ARG GEM_SOURCE=https://rubygems.org
 
 RUN apk update && apk upgrade \
