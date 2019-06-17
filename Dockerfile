@@ -8,7 +8,6 @@ ARG GEM_SOURCE=https://rubygems.org
 RUN apk update && apk upgrade \
     && apk add --no-cache bash git openssl ca-certificates docker python3 \
     ruby ruby-bundler ruby-dev g++ libffi-dev musl-dev make gnupg \
-    && bundle update --bundler \
     && gcloud components install kubectl \
     && gcloud components install beta \
     && python3 -m ensurepip \
