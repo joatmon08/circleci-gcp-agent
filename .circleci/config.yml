@@ -3,7 +3,7 @@ version: 2
 
 defaults: &defaults
   docker:
-    - image: circleci/ruby:2.5.1-node-browsers-legacy
+    - image: circleci/ruby:2.5.5-stretch
   working_directory: ~/circleci-gcp-agent
   environment:
     LIBRARY: joatmon08
@@ -34,7 +34,9 @@ jobs:
       - setup_remote_docker
       - run:
           name: install dependencies
-          command: bundle install
+          command: |
+            bundle update --bundler
+            bundle install
       - run:
           name: configuration tests
           command: |
