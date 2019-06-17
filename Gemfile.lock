@@ -144,6 +144,8 @@ GEM
       train-habitat (~> 0.1)
       tty-prompt (~> 0.17)
       tty-table (~> 0.10)
+    inspec-bin (4.3.2)
+      inspec (= 4.3.2)
     jmespath (1.4.0)
     json (2.2.0)
     jwt (2.2.1)
@@ -318,6 +320,7 @@ PLATFORMS
 
 DEPENDENCIES
   inspec (= 4.3.2)
+  inspec-bin
 
 BUNDLED WITH
    2.0.2
