@@ -6,7 +6,7 @@ control 'check gcloud sdk' do
     it { should exist }
   end
   describe command('gcloud version') do
-    its('stdout') { should include '249.0.0' }
+    its('stdout') { should include '250.0.0' }
   end
 end
 
@@ -82,9 +82,6 @@ control 'check ruby' do
   desc 'confirm ruby installed'
   describe command('ruby --version') do
     its('stdout') { should include '2.5.5' }
-  end
-  describe command('inspec --version') do
-    its('stdout') { should include '4.3.2' }
   end
 end
 
