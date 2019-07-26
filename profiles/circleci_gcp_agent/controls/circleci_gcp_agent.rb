@@ -90,7 +90,7 @@ control 'check terraform' do
   title 'confirm terraform installed'
   desc 'confirm terraform installed'
   describe command('terraform --version') do
-    its('stdout') { should include '0.12.1' }
+    its('stdout') { should include '0.12.5' }
   end
 end
 
