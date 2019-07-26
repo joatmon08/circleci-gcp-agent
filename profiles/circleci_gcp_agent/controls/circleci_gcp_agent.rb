@@ -6,7 +6,7 @@ control 'check gcloud sdk' do
     it { should exist }
   end
   describe command('gcloud version') do
-    its('stdout') { should include '250.0.0' }
+    its('stdout') { should include '255.0.0' }
   end
 end
 
@@ -18,7 +18,7 @@ control 'check kubectl' do
     it { should exist }
   end
   describe command('kubectl version') do
-    its('stdout') { should include '1.12.8' }
+    its('stdout') { should include '1.12.9' }
   end
 end
 
@@ -57,7 +57,7 @@ control 'check python' do
     its('stdout') { should include '3.6.8' }
   end
   describe command('pip --version') do
-    its('stdout') { should include '19.1.1' }
+    its('stdout') { should include '19.2.1' }
   end
   describe command('pip show jinja2') do
     its('stdout') { should include '2.10.1' }
@@ -72,7 +72,7 @@ control 'check docker' do
   title 'confirm docker installed'
   desc 'confirm docker installed'
   describe command('docker --version') do
-    its('stdout') { should include '18.09.1' }
+    its('stdout') { should include '18.09.8' }
   end
 end
 
@@ -99,6 +99,6 @@ control 'check helm' do
   title 'confirm helm installed'
   desc 'confirm helm installed'
   describe command('helm version --client') do
-    its('stdout') { should include '2.11.0' }
+    its('stdout') { should include '2.14.2' }
   end
 end
