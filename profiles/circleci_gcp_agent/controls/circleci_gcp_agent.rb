@@ -49,39 +49,12 @@ control 'check gpg' do
   end
 end
 
-control 'check python' do
-  impact 1.0
-  title 'confirm python installed'
-  desc 'confirm python installed'
-  describe command('python --version') do
-    its('stdout') { should include '3.6.8' }
-  end
-  describe command('pip --version') do
-    its('stdout') { should include '19.2.1' }
-  end
-  describe command('pip show jinja2') do
-    its('stdout') { should include '2.10.1' }
-  end
-  describe command('invoke --version') do
-    its('stdout') { should include '1.2.0' }
-  end
-end
-
 control 'check docker' do
   impact 1.0
   title 'confirm docker installed'
   desc 'confirm docker installed'
   describe command('docker --version') do
-    its('stdout') { should include '18.09.8' }
-  end
-end
-
-control 'check ruby' do
-  impact 1.0
-  title 'confirm ruby installed'
-  desc 'confirm ruby installed'
-  describe command('ruby --version') do
-    its('stdout') { should include '2.5.5' }
+    its('stdout') { should include '19.03' }
   end
 end
 
@@ -90,15 +63,6 @@ control 'check terraform' do
   title 'confirm terraform installed'
   desc 'confirm terraform installed'
   describe command('terraform --version') do
-    its('stdout') { should include '0.12.5' }
-  end
-end
-
-control 'check helm' do
-  impact 1.0
-  title 'confirm helm installed'
-  desc 'confirm helm installed'
-  describe command('helm version --client') do
-    its('stdout') { should include '2.14.2' }
+    its('stdout') { should include '0.12' }
   end
 end
