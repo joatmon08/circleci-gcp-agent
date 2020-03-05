@@ -62,7 +62,25 @@ control 'check terraform' do
   impact 1.0
   title 'confirm terraform installed'
   desc 'confirm terraform installed'
-  describe command('terraform --version') do
+  describe command('terraform version') do
     its('stdout') { should include '0.12' }
+  end
+end
+
+control 'check opa' do
+  impact 1.0
+  title 'confirm opa installed'
+  desc 'confirm opa installed'
+  describe command('opa version') do
+    its('stdout') { should include '0.17' }
+  end
+end
+
+control 'check conftest' do
+  impact 1.0
+  title 'confirm conftest installed'
+  desc 'confirm conftest installed'
+  describe command('conftest --version') do
+    its('stdout') { should include '0.17' }
   end
 end
