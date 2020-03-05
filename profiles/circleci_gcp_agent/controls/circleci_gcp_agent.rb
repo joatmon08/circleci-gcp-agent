@@ -6,7 +6,7 @@ control 'check gcloud sdk' do
     it { should exist }
   end
   describe command('gcloud version') do
-    its('stdout') { should include '255.0.0' }
+    its('stdout') { should include '283.0.0' }
   end
 end
 
@@ -18,7 +18,7 @@ control 'check kubectl' do
     it { should exist }
   end
   describe command('kubectl version') do
-    its('stdout') { should include '1.12.9' }
+    its('stdout') { should include '1.14' }
   end
 end
 
@@ -27,7 +27,7 @@ control 'check git' do
   title 'confirm git installed'
   desc 'confirm git installed'
   describe command('git version') do
-    its('stdout') { should include '2.20.1' }
+    its('stdout') { should include '2.24.1' }
   end
 end
 
@@ -36,7 +36,7 @@ control 'check openssl' do
   title 'confirm openssl installed'
   desc 'confirm openssl installed'
   describe command('openssl version') do
-    its('stdout') { should include '1.1.1b' }
+    its('stdout') { should include '1.1.1d' }
   end
 end
 
@@ -45,7 +45,7 @@ control 'check gpg' do
   title 'confirm gpg installed'
   desc 'confirm gpg installed'
   describe command('gpg --help') do
-    its('stdout') { should include '2.2.12' }
+    its('stdout') { should include '2.2.19' }
   end
 end
 
@@ -54,7 +54,7 @@ control 'check docker' do
   title 'confirm docker installed'
   desc 'confirm docker installed'
   describe command('docker --version') do
-    its('stdout') { should include '19.03' }
+    its('stdout') { should include '17.12.0' }
   end
 end
 

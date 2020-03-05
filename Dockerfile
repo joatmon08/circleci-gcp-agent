@@ -1,9 +1,9 @@
 FROM google/cloud-sdk:alpine
 
-ENV TERRAFORM_VERSION=0.12.12
+ENV TERRAFORM_VERSION=0.12.21
 
 RUN apk update && apk upgrade \
-    && apk add --no-cache bash git openssl ca-certificates docker \
+    && apk add --no-cache bash git openssl ca-certificates \
     && gcloud components install kubectl \
     && gcloud components install beta \
     && cd /tmp \
