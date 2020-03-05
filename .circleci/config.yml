@@ -9,6 +9,7 @@ defaults: &defaults
     LIBRARY: joatmon08
     CONTAINER_NAME: circleci-gcp-agent
     VERSION: 283.0-1.14
+    CHEF_LICENSE: accept-silent
 
 jobs:
   build:
@@ -36,15 +37,14 @@ jobs:
           name: install dependencies
           command: |
             gem update --system
-            gem install bundler
-            bundle install
+            gem install inspec-bin
       - run:
           name: configuration tests
           command: |
             echo $DOCKER_HUB_KEY | docker login -u $DOCKER_HUB_USER --password-stdin
             docker pull $LIBRARY/$CONTAINER_NAME:latest
             CID="$(docker run -d -v /var/run/docker.sock:/var/run/docker.sock:ro $LIBRARY/$CONTAINER_NAME:latest sleep 360)"
-            inspec exec --chef-license=accept-silent profiles/circleci_gcp_agent -t docker://$CID
+            inspec exec profiles/circleci_gcp_agent -t docker://$CID
             docker rm -f $CID
 
 workflows:
