@@ -1,6 +1,6 @@
 FROM google/cloud-sdk:alpine
 
-ENV TERRAFORM_VERSION=0.12.22
+ENV TERRAFORM_VERSION=0.12.23
 ENV CONFTEST_VERSION=0.17.1
 
 RUN apk update && apk upgrade \
