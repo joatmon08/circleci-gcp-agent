@@ -31,24 +31,6 @@ control 'check git' do
   end
 end
 
-control 'check openssl' do
-  impact 1.0
-  title 'confirm openssl installed'
-  desc 'confirm openssl installed'
-  describe command('openssl version') do
-    its('stdout') { should include '1.1.1d' }
-  end
-end
-
-control 'check gpg' do
-  impact 1.0
-  title 'confirm gpg installed'
-  desc 'confirm gpg installed'
-  describe command('gpg --help') do
-    its('stdout') { should include '2.2.19' }
-  end
-end
-
 control 'check docker' do
   impact 1.0
   title 'confirm docker installed'
@@ -81,15 +63,6 @@ control 'check opa' do
   title 'confirm opa installed'
   desc 'confirm opa installed'
   describe command('opa version') do
-    its('stdout') { should include '0.17' }
-  end
-end
-
-control 'check conftest' do
-  impact 1.0
-  title 'confirm conftest installed'
-  desc 'confirm conftest installed'
-  describe command('conftest --version') do
-    its('stdout') { should include '0.17' }
+    its('stdout') { should include '0.18' }
   end
 end
