@@ -8,7 +8,7 @@ defaults: &defaults
   environment:
     LIBRARY: joatmon08
     CONTAINER_NAME: circleci-gcp-agent
-    VERSION: 283.0-1.14
+    VERSION: 287.0-1.14
     CHEF_LICENSE: accept-silent
 
 jobs:

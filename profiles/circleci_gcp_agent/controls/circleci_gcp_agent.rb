@@ -67,6 +67,15 @@ control 'check terraform' do
   end
 end
 
+control 'check vault' do
+  impact 1.0
+  title 'confirm vault installed'
+  desc 'confirm vault installed'
+  describe command('vault version') do
+    its('stdout') { should include '1.3' }
+  end
+end
+
 control 'check opa' do
   impact 1.0
   title 'confirm opa installed'
